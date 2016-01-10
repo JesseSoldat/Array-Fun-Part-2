@@ -79,18 +79,32 @@ randomRemainder();
 var javaScript = ['jquery','angular','backbone','react','underscore','ember','node','lodash']
 var languages = ['French','Spanish','Japanese','Thai','Chinese','Swahili']
 
-var prototype = document.getElementById('prototype1');
-var prototype = document.getElementById('prototype2');
+var prototype1 = document.getElementById('prototype1');
+var prototype2 = document.getElementById('prototype2');
 
 
 Array.prototype.randomSplice = function(num) {
   var randomIndex = Math.floor(Math.random() * this.length);
   var randomSplice = this.splice(randomIndex, num);
+  console.log(this);
   return randomSplice;
 }
 // console.log(javaScript.randomSplice(1));
 prototype1.innerHTML = javaScript.randomSplice(1);
 prototype2.innerHTML = languages.randomSplice(1);
+
+
+
+var prototype3 = document.getElementById('prototype3');
+
+
+Array.prototype.randomValue = function() {
+  var randomIndex = Math.floor(Math.random() * this.length);
+  var randomValue = this[randomIndex];
+  return randomValue;
+}
+prototype3.innerHTML = languages.randomValue();
+
 
 
 
