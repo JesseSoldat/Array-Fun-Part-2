@@ -6,10 +6,7 @@ var myArray = ['A','B','C','D','E','F','G'];
 var newArray =  [];
 
 for(i = 0; i < 50; i++) {
- 
   var randomIndex = Math.floor(Math.random() * myArray.length);
- 
- 
   random.innerHTML += myArray[randomIndex];  
   newArray.push(myArray[randomIndex]);
 }
@@ -61,8 +58,22 @@ for(i = 0; i < myArray.length; i++) {
     splice.appendChild(list);
 }
 
-//Remove one Letter randomly at a time until we are left with only one
 
+//Remove one Letter randomly at a time until we are left with only one
+onlyOne = document.getElementById('onlyOne');
+
+function randomRemainder() {
+  for(i = 0; i < 6; i++) {
+
+    randomIndex = Math.floor(Math.random() * myArray.length);
+    myArray.splice(randomIndex, 1);
+    
+    var list = document.createElement("li");
+    list.appendChild(document.createTextNode(myArray.join(" ")));
+    onlyOne.appendChild(list);
+  }
+}
+randomRemainder();
 
 
 
